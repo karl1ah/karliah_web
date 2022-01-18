@@ -1,0 +1,14 @@
+﻿@model IEnumerable<deneme_projesi.Models.BlogModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Arama Sonuçları</h2>
+
+@Html.Partial("Bloglistesi", Model)
+
+@section sagkolon
+    {
+    @Html.Partial("Search")
+    @{Html.RenderAction("KategoriListesi", "Category"); }
+}

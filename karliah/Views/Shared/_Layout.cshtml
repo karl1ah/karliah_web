@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - blog uygulaması</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div> @Html.ActionLink("Anasayfa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</div>
+            <div>
+                @Html.ActionLink("Bloglar", "List", "Blog", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div>
+                @Html.ActionLink("kategoriler", "List", "Category", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="nav-item btn-group " >
+                @*<button class="navbar-toggler nav-link " type="button" href="~/Home/AdminGiris">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    </svg>
+                </button>*@
+                <a class="navbar-toggler nav-link " type="button" href="~/Home/AdminGiris">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    </svg>
+                </a>
+
+                @*<ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item " style="color:#686868;" href="~/Home/AdminGiris">Admin Girişi </a></li>
+                    <li><a class="dropdown-item" style="color:#686868;" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider" style="color:#686868;"></li>
+                    <li><a class="dropdown-item " style="color:#686868;" href="#">Something else here</a></li>
+                </ul>*@
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        <div class="row">
+
+            @if (IsSectionDefined("sagkolon"))
+            {
+                <div class="col-md-8">
+                    @RenderBody()
+                </div>
+                <div class="col-md-4">
+                    @RenderSection("sagkolon")
+                </div>
+
+            }
+            else if (IsSectionDefined("anasayfasagkolon"))
+            {
+
+                @RenderBody()
+
+                @RenderSection("anasayfasagkolon")
+            }
+            else
+            {
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+            }
+        </div>
+    </div>
+    <hr />
+    <footer class="bg-light text-center text-lg-start">
+       
+        <div class="container p-4">
+            
+            <div class="row">
+                <h5 class="text-uppercase" style="text-align:center;" >İlk Kural Saygı</h5><br /><br />
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    
+
+                    <p>
+                        saygılı ve hoşgörülü olmaya dikkat edelim 
+                    </p>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    
+
+                    <p>
+                        başkalarına hakaret içeren argolu ve bir niteliği olmayan yazılar onaylanmayacaktır yazılan bloglar onaydan geçmedikçe yayımlanmayacaktır
+                    </p>
+                </div>
+
+            </div>
+            
+        </div>
+      
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <p>&copy; @DateTime.Now.Year -Karliah Blog Sitesi</p>
+            <a class="text-dark" href="https://www.instagram.com/fatihylmaz._/">karliah</a>
+        </div>
+     
+    </footer>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@model deneme_projesi.Models.YorumModel
+
+
+<div class="form-check" style="background-color:lightgray;">
+    <hr />
+    <div class="well">
+        <h4 class="container">Yorum Yap</h4>
+        <form class="container">
+            <div class="form-group">
+                <textarea class="form-control " rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+    <hr />
+    @foreach (var item in Model.yorumlar)
+    {
+        <p>
+            @item.yorum
+        </p>
+    }
+   
+</div>

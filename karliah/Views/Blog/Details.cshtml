@@ -1,0 +1,139 @@
+﻿@model deneme_projesi.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+<h1>@Model.baslik</h1>
+<hr />
+<p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+    </svg>
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-thumbnail" src="http://via.placeholder.com/500x250" />
+<blockquote class="blockquote">
+    <p>@Model.Aciklama</p>
+</blockquote>
+<p>
+    @Model.Icerik
+</p>
+<!--<div class="form-check" style="background-color:lightgray;">
+    <hr />
+    <div class="well">
+        <h4 class="container">bu bloğu yorumla</h4>
+        -->
+        @*@using (Html.BeginForm())
+        {
+            <div class="container">
+                <div class="form-group">
+
+                    @Html.TextAreaFor(a => a.yorumlar, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        }*@
+        @*<form class="container">
+            <div class="form-group">
+                <textarea class="form-control " rows="3"></textarea>
+            </div>
+
+        </form>*@
+    <!--</div>
+    <hr />
+
+
+
+
+
+   
+</div>-->
+@section sagkolon
+    {
+    @Html.Partial("Search")
+    @{Html.RenderAction("KategoriListesi", "Category"); }
+}
+
+
+
+
+
+
+
+
+@*<div>
+        <h4>Blog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.KategorAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.KategorAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EklenmeTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EklenmeTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Onay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Onay)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Anasayfa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Anasayfa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Resim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Resim)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

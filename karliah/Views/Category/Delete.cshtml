@@ -1,0 +1,45 @@
+﻿@model deneme_projesi.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="alert alert-warning ">
+
+        Bu Kategoriyi içersindeki bütün bloglar ile birlikte silmek istesiğinize eminmisiniz Silmek istediğinize eminmisiniz?
+    </div>
+
+    <label>
+        <strong>
+            @Html.DisplayNameFor(model => model.KategorAdi)
+        </strong> :
+    </label>
+       
+           
+        
+            @Html.DisplayFor(model => model.KategorAdi)
+
+    
+    
+        
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Listeye geri dön", "Index", null, new { @class = "btn btn-secondary", @style = "text-decoration:dotted; " })
+    </div>
+</div>

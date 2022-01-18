@@ -1,0 +1,45 @@
+﻿@model deneme_projesi.Models.Blog
+@{
+    ViewBag.Title = "AdminDetails";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h1>@Model.baslik</h1>
+<hr />
+<p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+    </svg>
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-thumbnail" src="http://via.placeholder.com/500x250" />
+<blockquote class="blockquote">
+    <p>@Model.Aciklama</p>
+</blockquote>
+<p>
+    @Model.Icerik
+</p>
+<div class="form-check" style="background-color:lightgray;">
+    <hr />
+    <div class="well">
+        <h4 class="container">Yorum Yap</h4>
+        <form role="" class="container">
+            <div class="form-group">
+                <textarea class="form-control " rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+    <hr />
+    <p class="lh-base">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Cras mattis pannenkoek purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum.</p>
+    <p class="lh-base">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Cras mattis pannenkoek purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum.</p>
+
+</div>
+@*@section sagkolon
+        {
+        @Html.Partial("Search")
+        @{Html.RenderAction("KategoriListesi", "Category"); }
+    }*@
+

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<deneme_projesi.Models.CategoryModel>
+@{
+    ViewBag.Title = "List";
+}
+
+
+
+@foreach (var item in Model)
+{
+    <hr />
+    <div class="blog">
+        <h3 class="page-item">
+            @item.KategoriAdi
+        </h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/Blog/list/@item.Id" class="list-group-item  btn-outline-secondary" style="text-decoration:dotted;">@item.KategoriAdi</a>
+
+                <span class="badge bg-primary rounded-pill">@item.BlogSayisi</span>
+            </li>
+            
+        </ul>
+        @*@Html.ActionLink("Daha Fazla", "Details", "Blog", new { id = item.Id }, new { @class = "btn btn-primary" })*@
+        @*<button class="btn btn-primary">Daha Fazla...</button>*@
+    </div>
+}
+
+
+

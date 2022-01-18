@@ -1,0 +1,31 @@
+﻿@model IEnumerable<deneme_projesi.Models.BlogModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>blog listesi</h2>
+@*@Html.Partial("Bloglistesi", Model)
+    @section sagkolon
+        {
+        @Html.Partial("Search")
+        @{Html.RenderAction("KategoriListesi", "Category"); }
+    }*@
+
+
+@Html.Partial("Bloglistesi", Model)
+
+@section sagkolon
+    {
+    @Html.Partial("Search")
+
+    @{Html.RenderAction("KategoriListesi", "Category"); }
+    <hr />
+    <p>
+        <strong> blog yazmak isterseniz buraya tıklayarak bu sitede blog yazabilirsiniz eğer bloğunuz onaylanırsa bloğunuz bu sayfada yayınlanabilir</strong>
+    </p>
+
+    <p>
+        @Html.ActionLink("yeni blog ekle", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <hr /> 
+}
